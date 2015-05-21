@@ -1,8 +1,9 @@
 package org.tzc.geometry;
 
+import org.tzc.geometry.composite.Leaf;
 import org.tzc.geometry.exceptions.GeometryException;
 
-public abstract class Shape implements Drawable {
+public abstract class Shape implements Drawable, Leaf {
 
     public abstract double getPerimeter() throws GeometryException;
 
