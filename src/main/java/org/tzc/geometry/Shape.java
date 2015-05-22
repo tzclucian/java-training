@@ -1,6 +1,6 @@
 package org.tzc.geometry;
 
-import org.tzc.geometry.composite.Leaf;
+import org.tzc.geometry.layer.Leaf;
 import org.tzc.geometry.exceptions.GeometryException;
 
 public abstract class Shape implements Drawable, Leaf {
