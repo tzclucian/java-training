@@ -1,4 +1,4 @@
-package org.tzc.geometry.composite;
+package org.tzc.geometry.layer;
 
 import org.tzc.geometry.Shape;
 
