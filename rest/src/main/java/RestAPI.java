@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
  *         25/05/15
  *         java-training
  */
-public class WebApp {
+public class RestAPI {
     public static void main(String[] args) throws Exception {
         SpringApplication.run(LayerResource.class, args);
     }
