@@ -1,7 +1,7 @@
 import org.junit.Test;
 import org.tzc.geometry.Point;
 import org.tzc.geometry.Shape;
-import org.tzc.geometry.layer.LayerAdaptor;
+import org.tzc.geometry.serializer.LayerAdaptor;
 import org.tzc.geometry.layer.CompositeLayer;
 import org.tzc.geometry.exceptions.GeometryException;
 import org.tzc.geometry.polygonal.quadrilateral.Parallelogram;
@@ -12,8 +12,8 @@ import org.tzc.geometry.polygonal.triangle.EquilateralTriangle;
 import org.tzc.geometry.polygonal.triangle.IsoscelesTriangle;
 import org.tzc.geometry.polygonal.triangle.RightTriangle;
 import org.tzc.geometry.polygonal.triangle.Triangle;
-import org.tzc.geometry.visitor.JSONSerializer;
-import org.tzc.geometry.visitor.ShapeSerializer;
+import org.tzc.geometry.serializer.JSONSerializer;
+import org.tzc.geometry.serializer.ShapeSerializer;
 
 import java.util.List;
 

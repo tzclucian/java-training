@@ -1,7 +1,8 @@
-package org.tzc.geometry.layer;
+package org.tzc.geometry.serializer;
 
-import org.tzc.geometry.visitor.SerializableLayer;
-import org.tzc.geometry.visitor.ShapeSerializer;
+import org.tzc.geometry.layer.Layer;
+import org.tzc.geometry.serializer.SerializableLayer;
+import org.tzc.geometry.serializer.ShapeSerializer;
 
 /**
  * @author Lucian Tuca
