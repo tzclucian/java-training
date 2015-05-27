@@ -9,6 +9,9 @@ import java.util.Arrays;
 
 public class Quadrilateral extends SimplePolygon implements Validable {
 
+    public Quadrilateral() {
+    }
+
     public Quadrilateral(Point a, Point b, Point c, Point d) throws GeometryException {
         super(Arrays.asList(a, b, c, d));
     }

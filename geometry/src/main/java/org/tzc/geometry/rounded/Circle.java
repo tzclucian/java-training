@@ -5,12 +5,12 @@ import org.tzc.geometry.exceptions.GeometryException;
 
 public class Circle extends Shape {
     @Override
-    public double getPerimeter() throws GeometryException {
+    public double calculatePerimeter() throws GeometryException {
         return 0;
     }
 
     @Override
-    public double getArea() throws GeometryException {
+    public double calculateArea() throws GeometryException {
         return 0;
     }
 

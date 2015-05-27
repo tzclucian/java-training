@@ -4,6 +4,9 @@ public class LineSegment implements Drawable {
     private Point a;
     private Point b;
 
+    public LineSegment() {
+    }
+
     public LineSegment(Point a, Point b) {
         this.a = a;
         this.b = b;
@@ -25,8 +28,8 @@ public class LineSegment implements Drawable {
         this.b = b;
     }
 
-    public double getLength() {
-        return Math.sqrt((b.getX() - a.getX())*(b.getX() - a.getX()) + (b.getY() - a.getY())*(b.getY() - a.getY()));
+    public double calculateLength() {
+        return Math.sqrt((b.getX() - a.getX()) * (b.getX() - a.getX()) + (b.getY() - a.getY()) * (b.getY() - a.getY()));
     }
 
     public void draw() {
@@ -79,11 +82,11 @@ public class LineSegment implements Drawable {
      * @param ab
      * @return
      */
-    public double getAngle(LineSegment ab) {
-        double angle1 = this.getAngle();
-        double angle2 = ab.getAngle();
+    public double calculateAngle(LineSegment ab) {
+        double angle1 = this.calculateAngle();
+        double angle2 = ab.calculateAngle();
 
-        return Math.abs(angle2-angle1);
+        return Math.abs(angle2 - angle1);
     }
 
     /**
@@ -91,7 +94,7 @@ public class LineSegment implements Drawable {
      *
      * @return
      */
-    public double getAngle() {
+    public double calculateAngle() {
         double sin = getB().getX() - getA().getX();
         double cos = getB().getY() - getA().getY();
 

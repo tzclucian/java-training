@@ -8,22 +8,26 @@ import org.tzc.geometry.exceptions.GeometryException;
 import java.util.List;
 
 public class RightTriangle extends Triangle implements Validable {
+
+    private Point rightAngle;
+
+    public RightTriangle() {
+    }
+
     public RightTriangle(Point a, Point b, Point c) throws GeometryException {
         super(a, b, c);
     }
 
-    private Point rightAngle;
-
     @Override
-    public boolean isValid() {
-        if (!super.isValid()) return false;
+    public boolean check() {
+        if (!super.check()) return false;
 
         List<LineSegment> segments = getSegments();
 
 
-        double ab = segments.get(0).getLength();
-        double bc = segments.get(1).getLength();
-        double ca = segments.get(2).getLength();
+        double ab = segments.get(0).calculateLength();
+        double bc = segments.get(1).calculateLength();
+        double ca = segments.get(2).calculateLength();
 
         double max = Math.max(Math.max(ab, bc), ca);
         double hypotenuse = Math.pow(max, 2);
@@ -48,7 +52,7 @@ public class RightTriangle extends Triangle implements Validable {
 
     public Point getRightAngle() throws GeometryException {
         if (rightAngle == null) {
-            if (!isValid()) {
+            if (!check()) {
                 throw new GeometryException("Not a right triangle");
             }
         }

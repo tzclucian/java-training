@@ -14,8 +14,6 @@ public class PolygonalPath extends Shape {
     public PolygonalPath() {
     }
 
-    ;
-
     public PolygonalPath(List<Point> points) {
         this.points = points;
     }
@@ -37,10 +35,10 @@ public class PolygonalPath extends Shape {
         return segments;
     }
 
-    public double getLength() {
+    public double calculateLength() {
         double length = 0;
         for (LineSegment segment : getSegments()) {
-            length += segment.getLength();
+            length += segment.calculateLength();
         }
         return length;
     }
@@ -50,12 +48,12 @@ public class PolygonalPath extends Shape {
     }
 
     @Override
-    public double getPerimeter() throws GeometryException {
+    public double calculatePerimeter() throws GeometryException {
         throw new GeometryException("Perimeter not supported for Polygonal Path");
     }
 
     @Override
-    public double getArea() throws GeometryException {
+    public double calculateArea() throws GeometryException {
         throw new GeometryException("Area not supported for Polygonal Path");
     }
 }

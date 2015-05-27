@@ -8,15 +8,19 @@ import org.tzc.geometry.exceptions.GeometryException;
 import java.util.List;
 
 public abstract class SimplePolygon extends Polygon implements Validable {
+
+    public SimplePolygon() {
+    }
+
     public SimplePolygon(List<Point> points) throws GeometryException {
         super(points);
 
-        if (!isValid()) {
+        if (!check()) {
             throw new GeometryException("Invalid " + getClass().getSimpleName());
         }
     }
 
-    public boolean isValid() {
+    public boolean check() {
         List<LineSegment> segments = getSegments();
         int n = segments.size();
         for (int i = 0; i < n; i++) {
@@ -30,7 +34,7 @@ public abstract class SimplePolygon extends Polygon implements Validable {
     }
 
     @Override
-    public double getArea() throws GeometryException {
+    public double calculateArea() throws GeometryException {
         List<Point> points = getPoints();
 
         double area = 0;

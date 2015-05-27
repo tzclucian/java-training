@@ -10,13 +10,16 @@ import java.util.List;
 
 public class Triangle extends SimplePolygon implements Validable {
 
+    public Triangle() {
+    }
+
     public Triangle(Point a, Point b, Point c) throws GeometryException {
         super(Arrays.asList(a, b, c));
     }
 
-    public boolean isValid() {
+    public boolean check() {
 
-        if (!super.isValid()) {
+        if (!super.check()) {
             return false;
         }
 

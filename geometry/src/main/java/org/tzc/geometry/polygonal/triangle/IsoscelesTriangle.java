@@ -8,16 +8,19 @@ import org.tzc.geometry.exceptions.GeometryException;
 import java.util.List;
 
 public class IsoscelesTriangle extends Triangle implements Validable {
+
+    private LineSegment base;
+
+    public IsoscelesTriangle() {
+    }
+
     public IsoscelesTriangle(Point a, Point b, Point c) throws GeometryException {
         super(a, b, c);
     }
 
-
-    private LineSegment base;
-
     @Override
-    public boolean isValid() {
-        if (!super.isValid()) return false;
+    public boolean check() {
+        if (!super.check()) return false;
 
         List<LineSegment> segments = getSegments();
 
@@ -25,15 +28,15 @@ public class IsoscelesTriangle extends Triangle implements Validable {
         LineSegment bc = segments.get(1);
         LineSegment ca = segments.get(2);
 
-        if ((ab.getLength() - bc.getLength()) < 0.01) {
+        if ((ab.calculateLength() - bc.calculateLength()) < 0.01) {
             base = ca;
             return true;
         }
-        if ((bc.getLength() - ca.getLength()) < 0.01) {
+        if ((bc.calculateLength() - ca.calculateLength()) < 0.01) {
             base = ab;
             return true;
         }
-        if ((ca.getLength() - ab.getLength()) < 0.01) {
+        if ((ca.calculateLength() - ab.calculateLength()) < 0.01) {
             base = bc;
             return true;
         }

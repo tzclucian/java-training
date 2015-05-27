@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Polygon extends PolygonalPath {
+    public Polygon() {
+    }
+
     public Polygon(List<Point> points) {
         super.setPoints(points);
     }
@@ -17,8 +20,8 @@ public class Polygon extends PolygonalPath {
     }
 
     @Override
-    public double getPerimeter() throws GeometryException {
-        return super.getLength();
+    public double calculatePerimeter() throws GeometryException {
+        return super.calculateLength();
     }
 
     @Override

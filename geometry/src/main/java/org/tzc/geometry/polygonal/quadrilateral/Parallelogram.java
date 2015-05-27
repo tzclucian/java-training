@@ -6,21 +6,23 @@ import org.tzc.geometry.exceptions.GeometryException;
 
 public class Parallelogram extends Quadrilateral implements Validable {
 
+    public Parallelogram() {
+    }
 
     public Parallelogram(Point a, Point b, Point c, Point d) throws GeometryException {
         super(a, b, c, d);
     }
 
     @Override
-    public boolean isValid() {
-        if (!super.isValid()) {
+    public boolean check() {
+        if (!super.check()) {
             return false;
         }
 
-        double ab = getSegments().get(0).getLength();
-        double bc = getSegments().get(1).getLength();
-        double cd = getSegments().get(2).getLength();
-        double da = getSegments().get(3).getLength();
+        double ab = getSegments().get(0).calculateLength();
+        double bc = getSegments().get(1).calculateLength();
+        double cd = getSegments().get(2).calculateLength();
+        double da = getSegments().get(3).calculateLength();
 
         if (ab == cd && bc == da) {
             return true;
