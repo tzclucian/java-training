@@ -2,18 +2,18 @@ package org.tzc.geometry.layer;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import org.tzc.geometry.polygonal.Polygon;
-import org.tzc.geometry.polygonal.PolygonalPath;
-import org.tzc.geometry.polygonal.SimplePolygon;
-import org.tzc.geometry.polygonal.quadrilateral.Parallelogram;
-import org.tzc.geometry.polygonal.quadrilateral.Quadrilateral;
-import org.tzc.geometry.polygonal.quadrilateral.Rectangle;
-import org.tzc.geometry.polygonal.quadrilateral.Square;
-import org.tzc.geometry.polygonal.triangle.EquilateralTriangle;
-import org.tzc.geometry.polygonal.triangle.IsoscelesTriangle;
-import org.tzc.geometry.polygonal.triangle.RightTriangle;
-import org.tzc.geometry.polygonal.triangle.Triangle;
-import org.tzc.geometry.rounded.Circle;
+import org.tzc.geometry.shape.polygonal.Polygon;
+import org.tzc.geometry.shape.polygonal.PolygonalPath;
+import org.tzc.geometry.shape.polygonal.SimplePolygon;
+import org.tzc.geometry.shape.polygonal.quadrilateral.Parallelogram;
+import org.tzc.geometry.shape.polygonal.quadrilateral.Quadrilateral;
+import org.tzc.geometry.shape.polygonal.quadrilateral.Rectangle;
+import org.tzc.geometry.shape.polygonal.quadrilateral.Square;
+import org.tzc.geometry.shape.polygonal.triangle.EquilateralTriangle;
+import org.tzc.geometry.shape.polygonal.triangle.IsoscelesTriangle;
+import org.tzc.geometry.shape.polygonal.triangle.RightTriangle;
+import org.tzc.geometry.shape.polygonal.triangle.Triangle;
+import org.tzc.geometry.shape.rounded.Circle;
 
 /**
  * @author Lucian Tuca

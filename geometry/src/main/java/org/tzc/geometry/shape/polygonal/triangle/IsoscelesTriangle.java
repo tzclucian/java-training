@@ -1,8 +1,8 @@
-package org.tzc.geometry.polygonal.triangle;
+package org.tzc.geometry.shape.polygonal.triangle;
 
-import org.tzc.geometry.LineSegment;
-import org.tzc.geometry.Point;
-import org.tzc.geometry.Validable;
+import org.tzc.geometry.shape.LineSegment;
+import org.tzc.geometry.shape.Point;
+import org.tzc.geometry.shape.Validable;
 import org.tzc.geometry.exceptions.GeometryException;
 
 import java.util.List;

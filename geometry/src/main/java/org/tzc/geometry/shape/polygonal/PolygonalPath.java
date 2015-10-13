@@ -1,12 +1,13 @@
-package org.tzc.geometry.polygonal;
-
-import org.tzc.geometry.LineSegment;
-import org.tzc.geometry.Point;
-import org.tzc.geometry.Shape;
-import org.tzc.geometry.exceptions.GeometryException;
+package org.tzc.geometry.shape.polygonal;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import org.tzc.geometry.shape.LineSegment;
+import org.tzc.geometry.shape.Point;
+import org.tzc.geometry.shape.Shape;
+import org.tzc.geometry.exceptions.GeometryException;
 
 public class PolygonalPath extends Shape {
     private List<Point> points;
@@ -16,6 +17,10 @@ public class PolygonalPath extends Shape {
 
     public PolygonalPath(List<Point> points) {
         this.points = points;
+    }
+
+    public PolygonalPath(Point... points) {
+        this.setPoints(Arrays.asList(points));
     }
 
     public List<Point> getPoints() {

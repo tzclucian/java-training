@@ -1,6 +1,6 @@
 package org.tzc.geometry.exceptions;
 
-public class GeometryException extends Exception {
+public class GeometryException extends RuntimeException {
     public GeometryException() {
         super();
     }

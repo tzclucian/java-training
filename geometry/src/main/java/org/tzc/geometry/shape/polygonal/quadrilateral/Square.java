@@ -1,7 +1,7 @@
-package org.tzc.geometry.polygonal.quadrilateral;
+package org.tzc.geometry.shape.polygonal.quadrilateral;
 
-import org.tzc.geometry.Point;
-import org.tzc.geometry.Validable;
+import org.tzc.geometry.shape.Point;
+import org.tzc.geometry.shape.Validable;
 import org.tzc.geometry.exceptions.GeometryException;
 
 public class Square extends Rectangle implements Validable {

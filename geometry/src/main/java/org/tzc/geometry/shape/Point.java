@@ -1,4 +1,4 @@
-package org.tzc.geometry;
+package org.tzc.geometry.shape;
 
 public class Point {
     private double x;

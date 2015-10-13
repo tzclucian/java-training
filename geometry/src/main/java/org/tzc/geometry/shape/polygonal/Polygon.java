@@ -1,11 +1,12 @@
-package org.tzc.geometry.polygonal;
-
-import org.tzc.geometry.LineSegment;
-import org.tzc.geometry.Point;
-import org.tzc.geometry.exceptions.GeometryException;
+package org.tzc.geometry.shape.polygonal;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import org.tzc.geometry.shape.LineSegment;
+import org.tzc.geometry.shape.Point;
+import org.tzc.geometry.exceptions.GeometryException;
 
 public class Polygon extends PolygonalPath {
     public Polygon() {
@@ -13,6 +14,10 @@ public class Polygon extends PolygonalPath {
 
     public Polygon(List<Point> points) {
         super.setPoints(points);
+    }
+
+    public Polygon(Point... points) {
+        super.setPoints(Arrays.asList(points));
     }
 
     public void draw() {

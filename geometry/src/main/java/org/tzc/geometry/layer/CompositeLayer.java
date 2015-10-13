@@ -1,6 +1,6 @@
 package org.tzc.geometry.layer;
 
-import org.tzc.geometry.Shape;
+import org.tzc.geometry.shape.Shape;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
