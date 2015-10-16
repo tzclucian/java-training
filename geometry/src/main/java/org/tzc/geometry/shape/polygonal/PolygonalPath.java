@@ -53,12 +53,12 @@ public class PolygonalPath extends Shape {
     }
 
     @Override
-    public double calculatePerimeter() throws GeometryException {
+    public double calculatePerimeter() {
         throw new GeometryException("Perimeter not supported for Polygonal Path");
     }
 
     @Override
-    public double calculateArea() throws GeometryException {
+    public double calculateArea() {
         throw new GeometryException("Area not supported for Polygonal Path");
     }
 }

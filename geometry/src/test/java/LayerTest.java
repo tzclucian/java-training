@@ -2,10 +2,12 @@ import java.io.IOException;
 import java.util.List;
 
 import org.junit.Test;
+import org.tzc.geometry.layer.CompositeLayer;
+import org.tzc.geometry.serializer.JSONSerializer;
+import org.tzc.geometry.serializer.LayerAdaptor;
+import org.tzc.geometry.serializer.ShapeSerializer;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Shape;
-import org.tzc.geometry.exceptions.GeometryException;
-import org.tzc.geometry.layer.CompositeLayer;
 import org.tzc.geometry.shape.polygonal.quadrilateral.Parallelogram;
 import org.tzc.geometry.shape.polygonal.quadrilateral.Quadrilateral;
 import org.tzc.geometry.shape.polygonal.quadrilateral.Rectangle;
@@ -13,9 +15,6 @@ import org.tzc.geometry.shape.polygonal.quadrilateral.Square;
 import org.tzc.geometry.shape.polygonal.triangle.IsoscelesTriangle;
 import org.tzc.geometry.shape.polygonal.triangle.RightTriangle;
 import org.tzc.geometry.shape.polygonal.triangle.Triangle;
-import org.tzc.geometry.serializer.JSONSerializer;
-import org.tzc.geometry.serializer.LayerAdaptor;
-import org.tzc.geometry.serializer.ShapeSerializer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -61,7 +60,7 @@ public class LayerTest {
     }
 
     @Test
-    public void exportAndImportLayerTest() throws GeometryException, IOException {
+    public void exportAndImportLayerTest() throws IOException {
         Point a = new Point(0, 0);
         Point b = new Point(20, 0);
         Point c = new Point(20, 20);

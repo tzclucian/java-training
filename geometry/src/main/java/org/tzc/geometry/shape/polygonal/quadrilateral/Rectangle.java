@@ -3,14 +3,13 @@ package org.tzc.geometry.shape.polygonal.quadrilateral;
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
-import org.tzc.geometry.exceptions.GeometryException;
 
 public class Rectangle extends Parallelogram implements Validable {
 
     public Rectangle() {
     }
 
-    public Rectangle(Point a, Point b, Point c, Point d) throws GeometryException {
+    public Rectangle(Point a, Point b, Point c, Point d) {
         super(a, b, c, d);
     }
 

@@ -1,11 +1,11 @@
 package org.tzc.geometry.shape.polygonal.triangle;
 
+import java.util.List;
+
+import org.tzc.geometry.exceptions.GeometryException;
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
-import org.tzc.geometry.exceptions.GeometryException;
-
-import java.util.List;
 
 public class EquilateralTriangle extends IsoscelesTriangle implements Validable {
 
@@ -26,9 +26,6 @@ public class EquilateralTriangle extends IsoscelesTriangle implements Validable 
         LineSegment bc = segments.get(1);
         LineSegment ca = segments.get(2);
 
-        if ((ab.calculateLength() - bc.calculateLength()) < 0.01 && (bc.calculateLength() - ca.calculateLength()) < 0.01) {
-            return true;
-        }
-        return false;
+        return (ab.calculateLength() - bc.calculateLength()) < 0.01 && (bc.calculateLength() - ca.calculateLength()) < 0.01;
     }
 }

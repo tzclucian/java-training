@@ -1,11 +1,11 @@
 package org.tzc.geometry.shape.polygonal.triangle;
 
+import java.util.List;
+
+import org.tzc.geometry.exceptions.GeometryException;
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
-import org.tzc.geometry.exceptions.GeometryException;
-
-import java.util.List;
 
 public class RightTriangle extends Triangle implements Validable {
 
@@ -14,7 +14,7 @@ public class RightTriangle extends Triangle implements Validable {
     public RightTriangle() {
     }
 
-    public RightTriangle(Point a, Point b, Point c) throws GeometryException {
+    public RightTriangle(Point a, Point b, Point c) {
         super(a, b, c);
     }
 
@@ -50,7 +50,7 @@ public class RightTriangle extends Triangle implements Validable {
         return false;
     }
 
-    public Point getRightAngle() throws GeometryException {
+    public Point getRightAngle() {
         if (rightAngle == null) {
             if (!check()) {
                 throw new GeometryException("Not a right triangle");

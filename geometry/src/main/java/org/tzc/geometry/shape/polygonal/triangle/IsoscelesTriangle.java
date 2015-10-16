@@ -1,11 +1,10 @@
 package org.tzc.geometry.shape.polygonal.triangle;
 
+import java.util.List;
+
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
-import org.tzc.geometry.exceptions.GeometryException;
-
-import java.util.List;
 
 public class IsoscelesTriangle extends Triangle implements Validable {
 
@@ -14,7 +13,7 @@ public class IsoscelesTriangle extends Triangle implements Validable {
     public IsoscelesTriangle() {
     }
 
-    public IsoscelesTriangle(Point a, Point b, Point c) throws GeometryException {
+    public IsoscelesTriangle(Point a, Point b, Point c) {
         super(a, b, c);
     }
 

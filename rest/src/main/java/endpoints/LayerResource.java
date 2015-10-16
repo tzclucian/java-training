@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.tzc.geometry.exceptions.GeometryException;
 import org.tzc.geometry.layer.CompositeLayer;
 import org.tzc.geometry.serializer.JSONSerializer;
 import org.tzc.geometry.serializer.LayerAdaptor;
@@ -39,8 +38,7 @@ public class LayerResource {
     }
 
     @RequestMapping(value = "/rest/example-layer", method = RequestMethod.GET)
-    public String exampleLayer() throws GeometryException {
-
+    public String exampleLayer() {
         ShapeSerializer jsonSerializer = new JSONSerializer();
         LayerAdaptor shapeAdaptor = new LayerAdaptor(createExampleLayer());
         return shapeAdaptor.serialize(jsonSerializer);
@@ -48,7 +46,7 @@ public class LayerResource {
 
     @RequestMapping(value = "/rest/example-file/{fileName}", method = RequestMethod.GET)
     public void exampleLayerFile(@PathVariable("fileName") String filename, HttpServletResponse response)
-            throws GeometryException, IOException {
+            throws IOException {
 
         if (filename.isEmpty()) {
             throw new IllegalArgumentException("The 'filename' must be not null or empty!");
@@ -69,7 +67,7 @@ public class LayerResource {
         response.flushBuffer();
     }
 
-    private CompositeLayer createExampleLayer() throws GeometryException {
+    private CompositeLayer createExampleLayer() {
         Point a = new Point(0, 0);
         Point b = new Point(20, 0);
         Point c = new Point(20, 20);

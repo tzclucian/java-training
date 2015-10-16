@@ -1,19 +1,18 @@
 package org.tzc.geometry.shape.polygonal.triangle;
 
-import org.tzc.geometry.shape.Point;
-import org.tzc.geometry.shape.Validable;
-import org.tzc.geometry.exceptions.GeometryException;
-import org.tzc.geometry.shape.polygonal.SimplePolygon;
-
 import java.util.Arrays;
 import java.util.List;
+
+import org.tzc.geometry.shape.Point;
+import org.tzc.geometry.shape.Validable;
+import org.tzc.geometry.shape.polygonal.SimplePolygon;
 
 public class Triangle extends SimplePolygon implements Validable {
 
     public Triangle() {
     }
 
-    public Triangle(Point a, Point b, Point c) throws GeometryException {
+    public Triangle(Point a, Point b, Point c) {
         super(Arrays.asList(a, b, c));
     }
 

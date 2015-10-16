@@ -1,18 +1,18 @@
 package org.tzc.geometry.shape.polygonal;
 
+import java.util.List;
+
+import org.tzc.geometry.exceptions.GeometryException;
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
-import org.tzc.geometry.exceptions.GeometryException;
-
-import java.util.List;
 
 public abstract class SimplePolygon extends Polygon implements Validable {
 
     public SimplePolygon() {
     }
 
-    public SimplePolygon(List<Point> points) throws GeometryException {
+    public SimplePolygon(List<Point> points) {
         super(points);
 
         if (!check()) {
@@ -34,7 +34,7 @@ public abstract class SimplePolygon extends Polygon implements Validable {
     }
 
     @Override
-    public double calculateArea() throws GeometryException {
+    public double calculateArea() {
         List<Point> points = getPoints();
 
         double area = 0;

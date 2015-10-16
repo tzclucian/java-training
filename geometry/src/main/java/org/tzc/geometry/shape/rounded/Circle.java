@@ -2,7 +2,6 @@ package org.tzc.geometry.shape.rounded;
 
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Shape;
-import org.tzc.geometry.exceptions.GeometryException;
 
 public class Circle extends Shape {
 
@@ -18,12 +17,12 @@ public class Circle extends Shape {
     }
 
     @Override
-    public double calculatePerimeter() throws GeometryException {
+    public double calculatePerimeter() {
         return 2 * Math.PI * this.radiusLength;
     }
 
     @Override
-    public double calculateArea() throws GeometryException {
+    public double calculateArea() {
         return Math.PI * (this.radiusLength * this.radiusLength);
     }
 

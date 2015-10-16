@@ -2,14 +2,13 @@ package org.tzc.geometry.shape.polygonal.quadrilateral;
 
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
-import org.tzc.geometry.exceptions.GeometryException;
 
 public class Square extends Rectangle implements Validable {
 
     public Square() {
     }
 
-    public Square(Point a, Point b, Point c, Point d) throws GeometryException {
+    public Square(Point a, Point b, Point c, Point d) {
         super(a, b, c, d);
     }
 

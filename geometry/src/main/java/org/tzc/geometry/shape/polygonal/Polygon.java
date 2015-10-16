@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
-import org.tzc.geometry.exceptions.GeometryException;
 
 public class Polygon extends PolygonalPath {
     public Polygon() {
@@ -25,7 +24,7 @@ public class Polygon extends PolygonalPath {
     }
 
     @Override
-    public double calculatePerimeter() throws GeometryException {
+    public double calculatePerimeter() {
         return super.calculateLength();
     }
 
