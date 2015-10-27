@@ -32,18 +32,22 @@ public class ObserverTest {
         Triangle isoscelesTriangle = new IsoscelesTriangle(a, b, c);
 
         LayerBuilder layerBuilder = new LayerBuilder();
-        layerBuilder.addShape(quadrilateral);
-        layerBuilder.addShape(parallelogram);
+        layerBuilder.
+                addShape(quadrilateral).
+                addShape(parallelogram).
+                addShape(rectangle).
+                addShape(square).
+                addShape(rightTriangle).
+                addShape(isoscelesTriangle);
+        ProcessableLayer processableLayer = new ProcessableLayer(layerBuilder.build());
 
         TotalAreaCalculator totalAreaCalculator = new TotalAreaCalculator();
-
-        ProcessableLayer processableLayer = new ProcessableLayer(layerBuilder.build());
         processableLayer.registerProcessor(totalAreaCalculator);
 
         processableLayer.notifyProcessors();
         Map results = processableLayer.getProcessingResults();
 
         double totalArea = (Double) results.get(TotalAreaCalculator.class.getSimpleName());
-        assertEquals(800.0, totalArea, 0.01);
+        assertEquals(2000.0, totalArea, 0.01);
     }
 }
