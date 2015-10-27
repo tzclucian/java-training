@@ -1,18 +1,18 @@
 package org.tzc.geometry.serializer;
 
 import org.tzc.geometry.layer.Layer;
-import org.tzc.geometry.serializer.SerializableLayer;
-import org.tzc.geometry.serializer.ShapeSerializer;
 
 /**
  * @author Lucian Tuca
  *         22/05/15
  *         java-training
+ *
+ *         Adapter for a serializable layer.
  */
-public class LayerAdaptor implements SerializableLayer {
+public class SerializableLayerAdapter implements SerializableLayer {
     Layer layer;
 
-    public LayerAdaptor(Layer layer) {
+    public SerializableLayerAdapter(Layer layer) {
         this.layer = layer;
     }
 

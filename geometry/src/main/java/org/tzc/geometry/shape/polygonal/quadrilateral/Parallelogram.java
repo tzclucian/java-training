@@ -23,9 +23,6 @@ public class Parallelogram extends Quadrilateral implements Validable {
         double cd = getSegments().get(2).calculateLength();
         double da = getSegments().get(3).calculateLength();
 
-        if (ab == cd && bc == da) {
-            return true;
-        }
-        return false;
+        return ab == cd && bc == da;
     }
 }

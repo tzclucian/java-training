@@ -3,6 +3,13 @@ package org.tzc.geometry.builders.triangle;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.polygonal.triangle.EquilateralTriangle;
 
+/**
+ * @author Lucian Tuca
+ *         26/10/15
+ *         java-training
+ *
+ *         Specific shape builder.
+ */
 public class EquilateralTriangleBuilder {
     private Point a;
     private Point b;

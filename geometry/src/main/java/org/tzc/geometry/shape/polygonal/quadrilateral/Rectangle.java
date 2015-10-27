@@ -25,9 +25,6 @@ public class Rectangle extends Parallelogram implements Validable {
         double angle = ab.calculateAngle(bc);
         double angleDegrees = Math.toDegrees(angle);
 
-        if (Math.abs(angleDegrees - 90) < 0.0001) {
-            return true;
-        }
-        return false;
+        return Math.abs(angleDegrees - 90) < 0.0001;
     }
 }

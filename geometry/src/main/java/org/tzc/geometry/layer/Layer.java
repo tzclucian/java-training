@@ -1,7 +1,5 @@
 package org.tzc.geometry.layer;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.tzc.geometry.shape.polygonal.Polygon;
 import org.tzc.geometry.shape.polygonal.PolygonalPath;
 import org.tzc.geometry.shape.polygonal.SimplePolygon;
@@ -15,10 +13,15 @@ import org.tzc.geometry.shape.polygonal.triangle.RightTriangle;
 import org.tzc.geometry.shape.polygonal.triangle.Triangle;
 import org.tzc.geometry.shape.rounded.Circle;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 /**
  * @author Lucian Tuca
  *         19/05/15
  *         java-training
+ *         <p/>
+ *         Component
  */
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")

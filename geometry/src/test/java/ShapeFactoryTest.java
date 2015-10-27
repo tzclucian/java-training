@@ -1,7 +1,8 @@
 import org.apache.commons.lang.ArrayUtils;
 import org.junit.Assert;
 import org.junit.Test;
-import org.tzc.geometry.ExampleShapeFactory;
+import org.tzc.geometry.exceptions.GeometryException;
+import org.tzc.geometry.factory.ExampleShapeFactory;
 import org.tzc.geometry.shape.Shape;
 import org.tzc.geometry.shape.ShapeType;
 
@@ -27,5 +28,10 @@ public class ShapeFactoryTest {
             Assert.assertNotNull(exampleShape.calculateArea());
             Assert.assertNotNull(exampleShape.calculatePerimeter());
         }
+    }
+
+    @Test(expected = GeometryException.class)
+    public void badInputForFactoryTest() {
+        ExampleShapeFactory.createExampleShape(ShapeType.ShapeType);
     }
 }

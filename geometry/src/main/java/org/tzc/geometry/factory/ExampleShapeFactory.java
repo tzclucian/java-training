@@ -1,4 +1,4 @@
-package org.tzc.geometry;
+package org.tzc.geometry.factory;
 
 import org.tzc.geometry.exceptions.GeometryException;
 import org.tzc.geometry.shape.Point;
@@ -20,6 +20,8 @@ import org.tzc.geometry.shape.rounded.Circle;
  * @author Lucian Tuca
  *         13/10/15
  *         java-training
+ *
+ *         Factory class.
  */
 public class ExampleShapeFactory {
     public static Shape createExampleShape(ShapeType shapeType) {

@@ -1,16 +1,18 @@
 package org.tzc.geometry.layer;
 
-import org.tzc.geometry.shape.Shape;
-
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
+import org.tzc.geometry.shape.Shape;
+
 /**
  * @author Lucian Tuca
  *         19/05/15
  *         java-training
+ *
+ *         Composite.
  */
 public class CompositeLayer extends ArrayList<Layer> implements Layer {
 

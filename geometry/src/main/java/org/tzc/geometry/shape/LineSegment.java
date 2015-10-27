@@ -79,8 +79,8 @@ public class LineSegment implements Drawable {
     /**
      * Computes the angle between two segments
      *
-     * @param ab
-     * @return
+     * @param ab The other segment of the angle.
+     * @return Angle value
      */
     public double calculateAngle(LineSegment ab) {
         double angle1 = this.calculateAngle();
@@ -92,7 +92,7 @@ public class LineSegment implements Drawable {
     /**
      * Computes the angle between the segment and oX
      *
-     * @return
+     * @return Angle value
      */
     public double calculateAngle() {
         double sin = getB().getX() - getA().getX();

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.tzc.geometry.layer.CompositeLayer;
 import org.tzc.geometry.serializer.JSONSerializer;
-import org.tzc.geometry.serializer.LayerAdaptor;
+import org.tzc.geometry.serializer.SerializableLayerAdapter;
 import org.tzc.geometry.serializer.ShapeSerializer;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.polygonal.quadrilateral.Parallelogram;
@@ -40,7 +40,7 @@ public class LayerResource {
     @RequestMapping(value = "/rest/example-layer", method = RequestMethod.GET)
     public String exampleLayer() {
         ShapeSerializer jsonSerializer = new JSONSerializer();
-        LayerAdaptor shapeAdaptor = new LayerAdaptor(createExampleLayer());
+        SerializableLayerAdapter shapeAdaptor = new SerializableLayerAdapter(createExampleLayer());
         return shapeAdaptor.serialize(jsonSerializer);
     }
 
@@ -53,7 +53,7 @@ public class LayerResource {
         }
 
         ShapeSerializer jsonSerializer = new JSONSerializer();
-        LayerAdaptor shapeAdaptor = new LayerAdaptor(createExampleLayer());
+        SerializableLayerAdapter shapeAdaptor = new SerializableLayerAdapter(createExampleLayer());
         String serializedLayer = shapeAdaptor.serialize(jsonSerializer);
 
         response.setHeader("Content-Disposition", "attachment; filename=" + filename);

@@ -21,7 +21,6 @@ public class Square extends Rectangle implements Validable {
         double ab = getSegments().get(0).calculateLength();
         double bc = getSegments().get(1).calculateLength();
 
-        if (ab != bc) return false;
-        return true;
+        return ab == bc;
     }
 }
