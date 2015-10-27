@@ -21,6 +21,8 @@ public class ProcessableLayer extends CompositeLayer implements Processable {
 
     private Map<String, Double> results = new HashMap<String, Double>();
 
+    public ProcessableLayer () {}
+
     public ProcessableLayer(CompositeLayer layer) {
         for (Shape shape: layer.listAllShapes()) {
             this.add(shape);
