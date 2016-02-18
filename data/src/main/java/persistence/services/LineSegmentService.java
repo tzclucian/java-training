@@ -6,6 +6,11 @@ import org.tzc.geometry.shape.LineSegment;
 
 import persistence.repository.LineSegmentRepository;
 
+/**
+ * @author Lucian Tuca
+ *         18/02/16
+ *         spring-data-jpa (http://projects.spring.io/spring-data-jpa/)
+ */
 @Service
 public class LineSegmentService {
     @Autowired

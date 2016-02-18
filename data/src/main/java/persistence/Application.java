@@ -26,6 +26,11 @@ import persistence.services.ShapeService;
 @ComponentScan(basePackages = {"persistence.services"})
 @EntityScan(basePackages = "org.tzc.geometry.shape")
 @EnableJpaRepositories(basePackages = {"persistence.repository"})
+/**
+ * @author Lucian Tuca
+ *         18/02/16
+ *         spring-data-jpa (http://projects.spring.io/spring-data-jpa/)
+ */
 public class Application {
 
     @Autowired
