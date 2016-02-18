@@ -1,14 +1,20 @@
 package org.tzc.geometry.shape.polygonal.triangle;
 
 import java.util.List;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import org.tzc.geometry.exceptions.GeometryException;
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
 
+@Entity
+@Table(name = "RIGHT_TRIANGLE")
 public class RightTriangle extends Triangle implements Validable {
 
+    @Embedded
     private Point rightAngle;
 
     public RightTriangle() {

@@ -41,4 +41,12 @@ public class Circle extends Shape {
     public void setRadiusLength(long radiusLength) {
         this.radiusLength = radiusLength;
     }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "center=" + center +
+                ", radiusLength=" + radiusLength +
+                '}';
+    }
 }

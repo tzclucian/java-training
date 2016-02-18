@@ -3,10 +3,17 @@ package org.tzc.geometry.shape.polygonal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
 
+@Entity
+@Table(name = "POLYGON")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Polygon extends PolygonalPath {
     public Polygon() {
     }

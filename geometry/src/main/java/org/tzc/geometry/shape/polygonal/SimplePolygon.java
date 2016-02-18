@@ -1,12 +1,19 @@
 package org.tzc.geometry.shape.polygonal;
 
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 import org.tzc.geometry.exceptions.GeometryException;
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
 
+@Entity
+@Table(name = "SIMPLE_POLYGON")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class SimplePolygon extends Polygon implements Validable {
 
     public SimplePolygon() {

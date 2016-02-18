@@ -1,13 +1,24 @@
 package org.tzc.geometry.shape.polygonal.triangle;
 
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
 
+@Entity
+@Table(name = "ISOSCELES_TRIANGLE")
 public class IsoscelesTriangle extends Triangle implements Validable {
 
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    @Cascade(CascadeType.ALL)
     private LineSegment base;
 
     public IsoscelesTriangle() {

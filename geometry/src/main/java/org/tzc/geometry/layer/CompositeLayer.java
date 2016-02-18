@@ -11,13 +11,16 @@ import org.tzc.geometry.shape.Shape;
  * @author Lucian Tuca
  *         19/05/15
  *         java-training
- *
+ *         <p/>
  *         Composite.
  */
-public class CompositeLayer extends ArrayList<Layer> implements Layer {
+
+public class CompositeLayer implements Layer {
+
+    private List<Layer> shapes = new ArrayList<>();
 
     public void draw() {
-        for (Layer layer : this) {
+        for (Layer layer : shapes) {
             layer.draw();
         }
     }
@@ -37,7 +40,7 @@ public class CompositeLayer extends ArrayList<Layer> implements Layer {
         while (!que.isEmpty()) {
             layer = que.poll();
 
-            for (Layer innerLayer : layer) {
+            for (Layer innerLayer : layer.getShapes()) {
                 if (innerLayer instanceof Shape) {
                     allShapes.add((Shape) innerLayer);
                 } else {
@@ -47,5 +50,32 @@ public class CompositeLayer extends ArrayList<Layer> implements Layer {
 
         }
         return allShapes;
+    }
+
+    /**
+     * Proxy method to add() method
+     *
+     * @param layer Layer that we want to add.
+     * @return The same result as List's add.
+     */
+    public boolean add(Layer layer) {
+        return this.shapes.add(layer);
+    }
+
+    /**
+     * Proxy method to size() method.
+     *
+     * @return List's size.
+     */
+    public int size() {
+        return this.shapes.size();
+    }
+
+    public List<Layer> getShapes() {
+        return shapes;
+    }
+
+    public void setShapes(List<Layer> shapes) {
+        this.shapes = shapes;
     }
 }

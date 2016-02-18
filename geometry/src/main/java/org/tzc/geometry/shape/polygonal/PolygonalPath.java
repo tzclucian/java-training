@@ -3,13 +3,31 @@ package org.tzc.geometry.shape.polygonal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+import org.tzc.geometry.exceptions.GeometryException;
 import org.tzc.geometry.shape.LineSegment;
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Shape;
-import org.tzc.geometry.exceptions.GeometryException;
 
+@Entity
+@Table(name = "POLYGONAL_PATH")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class PolygonalPath extends Shape {
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @JoinTable(name = "POINTS", joinColumns = @JoinColumn(name = "POINT_ID"))
+    @Cascade(CascadeType.ALL)
     private List<Point> points;
 
     public PolygonalPath() {
@@ -60,5 +78,29 @@ public class PolygonalPath extends Shape {
     @Override
     public double calculateArea() {
         throw new GeometryException("Area not supported for Polygonal Path");
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + "{" +
+                "points=" + points +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof PolygonalPath)) {
+            return false;
+        }
+        PolygonalPath that = (PolygonalPath) o;
+        return Objects.equals(points, that.points);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(points);
     }
 }

@@ -3,10 +3,18 @@ package org.tzc.geometry.shape.polygonal.triangle;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
 import org.tzc.geometry.shape.polygonal.SimplePolygon;
 
+@Entity
+@Table(name = "TRIANGLE")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Triangle extends SimplePolygon implements Validable {
 
     public Triangle() {

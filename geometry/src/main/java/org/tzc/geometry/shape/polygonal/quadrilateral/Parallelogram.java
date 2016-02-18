@@ -1,8 +1,13 @@
 package org.tzc.geometry.shape.polygonal.quadrilateral;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import org.tzc.geometry.shape.Point;
 import org.tzc.geometry.shape.Validable;
 
+@Entity
+@Table(name = "PARALLELOGRAM")
 public class Parallelogram extends Quadrilateral implements Validable {
 
     public Parallelogram() {

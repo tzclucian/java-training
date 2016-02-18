@@ -1,7 +1,33 @@
 package org.tzc.geometry.shape;
 
+import java.util.Objects;
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "LINE_SEGMENT")
 public class LineSegment implements Drawable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @AttributeOverrides({
+            @AttributeOverride(name = "x", column = @Column(name = "Ax")),
+            @AttributeOverride(name = "y", column = @Column(name = "Ay"))
+    })
     private Point a;
+
+    @AttributeOverrides({
+            @AttributeOverride(name = "x", column = @Column(name = "Bx")),
+            @AttributeOverride(name = "y", column = @Column(name = "By"))
+    })
     private Point b;
 
     public LineSegment() {
@@ -36,14 +62,6 @@ public class LineSegment implements Drawable {
         System.out.println(this.toString());
     }
 
-    @Override
-    public String toString() {
-        return "LineSegment{" +
-                "a=" + a +
-                ", b=" + b +
-                '}';
-    }
-
     /**
      * Computes the intersection between two segments.
      *
@@ -65,14 +83,20 @@ public class LineSegment implements Drawable {
         double y4 = ab.getB().getY();
 
         double d = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
-        if (d == 0) return null;
+        if (d == 0) {
+            return null;
+        }
 
         double xi = ((x3 - x4) * (x1 * y2 - y1 * x2) - (x1 - x2) * (x3 * y4 - y3 * x4)) / d;
         double yi = ((y3 - y4) * (x1 * y2 - y1 * x2) - (y1 - y2) * (x3 * y4 - y3 * x4)) / d;
 
         Point p = new Point(xi, yi);
-        if (xi < Math.min(x1, x2) || xi > Math.max(x1, x2)) return null;
-        if (xi < Math.min(x3, x4) || xi > Math.max(x3, x4)) return null;
+        if (xi < Math.min(x1, x2) || xi > Math.max(x1, x2)) {
+            return null;
+        }
+        if (xi < Math.min(x3, x4) || xi > Math.max(x3, x4)) {
+            return null;
+        }
         return p;
     }
 
@@ -99,5 +123,39 @@ public class LineSegment implements Drawable {
         double cos = getB().getY() - getA().getY();
 
         return Math.atan2(cos, sin);
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "LineSegment{" +
+                "a=" + a +
+                ", b=" + b +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof LineSegment)) {
+            return false;
+        }
+        LineSegment that = (LineSegment) o;
+        return Objects.equals(a, that.a) &&
+                Objects.equals(b, that.b);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(a, b);
     }
 }

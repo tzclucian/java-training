@@ -13,7 +13,7 @@
     <modules>
         <module>rest</module>
         <module>geometry</module>
-        <module>spring-is-coming</module>
+        <module>data</module>
     </modules>
 
 </project>
